@@ -26,7 +26,11 @@ export const UserThemePreferenceProvider = ({children}: {children: React.ReactNo
   React.useEffect(() => {
     const storedValue = localStorage.getItem(STORE_KEY);
     if (storedValue) {
-      setUserThemePreference(JSON.parse(storedValue));
+      try {
+        setUserThemePreference(JSON.parse(storedValue));
+      } catch (e) {
+        console.error(e);
+      }
     }
   }, []);
 

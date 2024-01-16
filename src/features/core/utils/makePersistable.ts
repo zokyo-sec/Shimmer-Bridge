@@ -8,7 +8,11 @@ export function makePersistable<T extends {[key: string]: any}>(
   if (typeof localStorage === 'undefined') return;
   const storedJson = localStorage.getItem(options.name);
   if (storedJson) {
-    set(target, JSON.parse(storedJson));
+    try {
+      set(target, JSON.parse(storedJson));
+    } catch (e) {
+      console.error(e);
+    }
   }
   autorun(() => {
     const value = toJS(target);
