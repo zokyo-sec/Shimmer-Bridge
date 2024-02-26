@@ -65,7 +65,13 @@ export const AccountModal = observer(({title = 'Connect Wallet', ...props}: Acco
             <Box component='span' typography='p3' sx={{mr: 0.5}} color='text.secondary'>
               Is this your first time?
             </Box>
-            <Box component='a' href='/faq' color='primary.main' typography='p3'>
+            <Box
+              component='a'
+              href='https://wiki.iota.org/get-started/tools/shimmer-bridge'
+              target='_blank'
+              color='primary.main'
+              typography='p3'
+            >
               Learn more
             </Box>
           </Box>
